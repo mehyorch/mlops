@@ -1,10 +1,10 @@
 $schema: https://azuremlschemas.azureedge.net/latest/pipelineJob.schema.json
 type: pipeline
 
-description: Train model with auto mpg data
+description: Train model with advertising sales data
 
-display_name: auto-mpg-pipeline-example
-experiment_name: auto-mpg-pipeline-example
+display_name: advertising_sales_pipeline_example
+experiment_name: advertising_sales_pipeline_example
 jobs:
 
   prep_job:
@@ -20,7 +20,7 @@ jobs:
         mode: upload
     code: src/data_prep
     environment: azureml:AzureML-sklearn-1.0-ubuntu20.04-py38-cpu@latest
-    compute: azureml:c002
+    compute: azureml:cpu-cluster
     command: >-
       python prep.py 
       --data ${{inputs.data}} 
