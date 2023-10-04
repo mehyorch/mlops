@@ -9,7 +9,7 @@ on:
       - sdk-preview
     paths:
       - .github/jobs/advertising_sales_pipeline/**
-      - .github/workflows/cli-jobs-pipelines-advertising-sales-pipeline.yml
+      - .github/workflows/cli-jobs-pipelines-pipeline.yml
       - run-pipeline-jobs.sh
       - setup.sh
 jobs:
