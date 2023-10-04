@@ -8,7 +8,7 @@ on:
       - main
       - sdk-preview
     paths:
-      - .github/jobs/advertising_sales_pipeline/**
+      - mlops/jobs/advertising_sales_pipeline/**
       - .github/workflows/cli-jobs-pipelines-pipeline.yml
       - run-pipeline-jobs.sh
       - setup.sh
@@ -27,4 +27,4 @@ jobs:
       continue-on-error: true
     - name: run job
       run: bash -x ../../run-job.sh pipeline.yml
-      working-directory: .github/jobs/advertising_sales_pipeline
+      working-directory: mlops/jobs/advertising_sales_pipeline
