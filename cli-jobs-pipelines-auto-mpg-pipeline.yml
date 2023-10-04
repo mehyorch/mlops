@@ -1,15 +1,15 @@
-name: cli-jobs-pipelines-autom-mpg
+name: cli-jobs-pipelines-advertising-sales
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 0/4 * * *"
+    - cron: "0 0/12 * * *"
   pull_request:
     branches:
       - main
       - sdk-preview
     paths:
-      - jobs/autompg_pipeline/**
-      - .github/workflows/cli-jobs-pipelines-auto-mpg-pipeline.yml
+      - jobs/advertising_sales_pipeline/**
+      - .github/workflows/cli-jobs-pipelines-advertising-sales-pipeline.yml
       - run-pipeline-jobs.sh
       - setup.sh
 jobs:
@@ -27,4 +27,4 @@ jobs:
       continue-on-error: true
     - name: run job
       run: bash -x ../../run-job.sh pipeline.yml
-      working-directory: jobs/autompg_pipeline
+      working-directory: jobs/advertising_sales_pipeline
