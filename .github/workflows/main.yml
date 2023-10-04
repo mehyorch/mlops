@@ -2,14 +2,14 @@ name: cli-jobs-pipelines-advertising-sales
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 0/4 * * *"
+    - cron: "0 0/12 * * *"
   pull_request:
     branches:
       - main
       - sdk-preview
     paths:
       - jobs/advertising_sales_pipeline/**
-      - .github/workflows/cli-jobs-pipelines-advertising-sales-pipeline.yml
+      - .github/workflows/cli-jobs-pipelines-main.yml
       - run-pipeline-jobs.sh
       - setup.sh
 jobs:
