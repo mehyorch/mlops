@@ -4,7 +4,7 @@ type: pipeline
 description: Train model with ad sales data
 
 display_name: adsales-pipeline-example
-experiment_name: advertising_sales-pipeline-example
+experiment_name: advertising-sales-pipeline-example
 jobs:
 
   prep_job:
