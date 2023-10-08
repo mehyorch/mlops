@@ -40,19 +40,19 @@ def main():
     parser.add_argument("--model", type=str, help="path to model file")
     args = parser.parse_args() # Parse the command-line arguments
 
-    car_mpg_train = pd.read_csv(select_first_file(args.train_data))  # Read the training data
-    car_mpg_test = pd.read_csv(select_first_file(args.test_data)) # Read the test data
+    advertising_sales_train = pd.read_csv(select_first_file(args.train_data))  # Read the training data
+    advertising_sales_test = pd.read_csv(select_first_file(args.test_data)) # Read the test data
 
-    target = 'mpg'
-    numeric_features = ['cyl','disp','hp','wt','acc','yr','origin','car_type',]
+    target = 'Sales'
+    numeric_features = ['TV','Radio','Newspaper',]
 
     # Extract the features from the training data
-    X_train = car_mpg_train.drop(columns=[target]) 
-    y_train = car_mpg_train[target]
+    X_train = advertising_sales_train.drop(columns=[target]) 
+    y_train = advertising_sales_train[target]
 
     # Extract the features from the test data
-    X_test = car_mpg_test.drop(columns=[target])
-    y_test = car_mpg_test[target]
+    X_test = advertising_sales_test.drop(columns=[target])
+    y_test = advertising_sales_test[target]
 
     # Create a column transformer for preprocessing the numeric features
     preprocessor = make_column_transformer(
@@ -78,8 +78,8 @@ def main():
 
     mlflow.sklearn.log_model(
         sk_model=model_pipeline,
-        registered_model_name="gbr-car-mpg-predictor",
-        artifact_path="gbr-car-mpg-predictor"
+        registered_model_name="gbr-advertising_sales-predictor",
+        artifact_path="gbr-advertising_sales-predictor"
     ) # Register the model pipeline in MLflow
 
     mlflow.end_run()
